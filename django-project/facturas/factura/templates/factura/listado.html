@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<div class="container">
+    <div class="row">
+    {% for fc in factura %}
+      {% for lf in linea_factura %}
+      <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+          {% include 'factura/factura_card.html' %}
+      </div>
+      {% endfor %}
+    {% endfor %}
+    
+    </div>
+    </div>
+    </html>
