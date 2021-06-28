@@ -4,13 +4,15 @@ from .models import Factura, LineaFactura
 
 # Create your views here.
 
-def hola(request):
-    return HttpResponse("Hola, Mundo")
+def main(request):
+    return render(request, 'factura/main.html')
 
 def detalle(request, pk):
     fc = Factura.objects.get(id=pk)
-    return render(request, 'factura/main.html', {
-        "fc": fc, 
+    linea_factura = LineaFactura.objects.all()
+    return render(request, 'factura/detalle.html', {
+        'fc': fc, 
+        'linea_factura': linea_factura,
     })
 
 def listado_factura(request):
@@ -18,5 +20,5 @@ def listado_factura(request):
     linea_factura = LineaFactura.objects.all()
     return render(request, 'factura/listado.html', {
         'factura': factura,
-        'linea_factura': linea_factura 
+        'linea_factura': linea_factura, 
     })

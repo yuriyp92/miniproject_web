@@ -2,14 +2,36 @@
 <html>
 <div class="container">
     <div class="row">
+      <head>
+        <h1> Listado de facturas </h1>
+      </head>
+    </div>
     {% for fc in factura %}
-      {% for lf in linea_factura %}
       <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-          {% include 'factura/factura_card.html' %}
+        <body>
+         <p>Cliente: {{ fc.cliente_nombre }}</p>
+        </body>
+        <body>
+         <p>Número de factura: {{ fc.num }} </p>
+        </body>
+        <body>
+         <p>Año de emisión: {{ fc.anio }} </p>
+        </body>
+        <body>
+         <p>Fecha de emisión: {{ fc.fecha_emision }} </p>
+        </body>
+        <body>
+         <p>Dirección del cliente: {{ fc.cliente_direccion }}</p>
+        </body>
+        <body>
+          <p>Gasto total: {{ fc.precio_total }}</p>
+        </body>
+        <body>
+          <p>Gasto total con IVA: {{ fc.total_iva }}</p>
+        </body>
+        <body>
+          <a href="/factura/{{ fc.id }}/">Factura detallada</a>
+        </body>
       </div>
-      {% endfor %}
     {% endfor %}
-    
-    </div>
-    </div>
-    </html>
+</html>

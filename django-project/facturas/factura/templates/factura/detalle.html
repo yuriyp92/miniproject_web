@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<div class="container">
+    <div class="row">
+      <head>
+        <h1> Detalle de la factura </h1>
+      </head>
+    </div>
+    {% for lf in linea_factura %}
+      <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+        <body>
+          <p>Nombre del producto: {{ lf.nombre_producto }} </p>
+         </body>
+         <body>
+          <p>Precio del producto: {{ lf.precio_unitario }} </p>
+         </body>
+         <body>
+          <p>Unidades: {{ lf.unidades }} </p>
+         </body>
+         <body>
+          <p>Precio real: {{ lf.precio_real}} </p>
+         </body>
+      </div>
+    {% endfor %}
+</html>
