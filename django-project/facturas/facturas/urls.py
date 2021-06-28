@@ -22,9 +22,9 @@ import factura.views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('hola/', factura.views.hola),
     path('factura/<int:pk>/', factura.views.detalle),
     path('listado/', factura.views.listado_factura),
+    path('main/', factura.views.main),
 ]
 
 if settings.DEBUG:
